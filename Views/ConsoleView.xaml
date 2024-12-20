@@ -1,0 +1,8 @@
+﻿<UserControl x:Class="WpfApp1.Views.ConsoleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel>
+        <TextBlock Text="这是播放列表" FontSize="30" FontWeight="Bold"/>
+        <TextBlock Text="播放列表内容展示在这里" FontSize="16" Margin="10 0 0 0"/>
+    </StackPanel>
+</UserControl>

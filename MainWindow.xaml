@@ -4,6 +4,7 @@
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         Height="700" Width="1050" ResizeMode="NoResize" AllowsTransparency="True"
         WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent">
+
     <Border Background="White" CornerRadius="40" MouseDown="Border_MouseDown">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -17,110 +18,82 @@
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
             
-            <!--Menu-->
+            <!--菜单-->
             <Border Background="White" CornerRadius="40 0 0 40" Grid.RowSpan="2">
                 <StackPanel Margin="0 30 0 0">
-                    <!--Ellipses-->
+                    <!--关闭、最小化、全屏按钮-->
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="63 10 0 10">
-                        <Ellipse Fill="#ff6258" Width="10" Height="10"/>
-                        <Ellipse Fill="#ffbf2f" Width="10" Height="10" Margin="7 0"/>
-                        <Ellipse Fill="#2acb42" Width="10" Height="10"/>
+                        <Ellipse Fill="#ff6258" Width="15" Height="15" MouseLeftButtonDown="CloseButton_Click">
+                            <Ellipse.Style>
+                                <Style TargetType="Ellipse">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Effect">
+                                                <Setter.Value>
+                                                    <DropShadowEffect BlurRadius="10" ShadowDepth="0" Opacity="0.5" Color="#ff6258"/>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Ellipse.Style>
+                        </Ellipse>
+                        <Ellipse Fill="#ffbf2f" Width="15" Height="15" Margin="7 0" MouseLeftButtonDown="MinimizeButton_Click">
+                            <Ellipse.Style>
+                                <Style TargetType="Ellipse">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Effect">
+                                                <Setter.Value>
+                                                    <DropShadowEffect BlurRadius="10" ShadowDepth="0" Opacity="0.5" Color="#ffbf2f"/>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Ellipse.Style>
+                        </Ellipse>
+                        <Ellipse Fill="#2acb42" Width="15" Height="15" MouseLeftButtonDown="FullscreenButton_Click">
+                            <Ellipse.Style>
+                                <Style TargetType="Ellipse">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Effect">
+                                                <Setter.Value>
+                                                    <DropShadowEffect BlurRadius="10" ShadowDepth="0" Opacity="0.5" Color="#2acb42"/>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Ellipse.Style>
+                        </Ellipse>
                     </StackPanel>
 
-                    <TextBlock Text="DISCOVER" Style="{StaticResource menuTitle}"/>
+                    <TextBlock Text="不知道写什么" Style="{StaticResource menuTitle}"/>
 
-                    <Button Style="{StaticResource menuButton}" Background="#02be68" Foreground="White">
+                    <Button Style="{StaticResource menuButton}" 
+                            Background="#02be68" Foreground="White"
+                            Click="ShowHome_Click">
                         <Grid>
-                            <TextBlock Text="Home" Margin="0 0 0 2"/>
+                            <TextBlock Text="第一页" Margin="0 0 0 2"/>
                             <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}" Visibility="Visible"/>
                         </Grid>
                     </Button>
 
-                    <Button Style="{StaticResource menuButton}">
+                    <Button Style="{StaticResource menuButton}"
+                            Click="ShowConsole_Click">
                         <Grid>
-                            <TextBlock Text="Playlists" Margin="0 0 0 2"/>
+                            <TextBlock Text="第二页" Margin="0 0 0 2"/>
                             <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"/>
                         </Grid>
                     </Button>
 
-                    <Button Style="{StaticResource menuButton}">
-                        <Grid>
-                            <TextBlock Text="Artists" Margin="0 0 0 2"/>
-                            <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"/>
-                        </Grid>
-                    </Button>
-
-                    <Button Style="{StaticResource menuButton}">
-                        <Grid>
-                            <TextBlock Text="Albums" Margin="0 0 0 2"/>
-                            <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"/>
-                        </Grid>
-                    </Button>
-
-                    <Button Style="{StaticResource menuButton}">
-                        <Grid>
-                            <TextBlock Text="Songs" Margin="0 0 0 2"/>
-                            <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"/>
-                        </Grid>
-                    </Button>
-
-                    <Button Style="{StaticResource menuButton}">
-                        <Grid>
-                            <TextBlock Text="Store" Margin="0 0 0 2"/>
-                            <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"/>
-                        </Grid>
-                    </Button>
-
-                    <Button Style="{StaticResource menuButton}">
-                        <Grid>
-                            <TextBlock Text="Radio" Margin="0 0 0 2"/>
-                            <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"/>
-                        </Grid>
-                    </Button>
-
-                    <Button Style="{StaticResource menuButton}">
-                        <Grid>
-                            <TextBlock Text="For you" Margin="0 0 0 2"/>
-                            <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"/>
-                        </Grid>
-                    </Button>
-                    
                 </StackPanel>
             </Border>
-            
-            <!--Music Section-->
-            <StackPanel Grid.Column="1" Background="White" Margin="40 60 10 0">
-                <TextBlock Text="Home" Style="{StaticResource titleText}"/>
 
-                <Border CornerRadius="20" Margin="0 20 0 0">
-                    <Border.Background>
-                        <LinearGradientBrush>
-                            <GradientStop Color="#30ad9a" Offset="0"/>
-                            <GradientStop Color="#18c274" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Border.Background>
-
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="20" ShadowDepth="0" Opacity="0.4" Color="#1fae7e"/>
-                    </Border.Effect>
-
-                    <Grid>
-                        <Border Opacity="0.07" CornerRadius="20">
-                            <Border.Background>
-                                <SolidColorBrush Color="White"/>
-                            </Border.Background>
-                        </Border>
-                        
-                        <!--Music List-->
-                        <StackPanel Margin="30">
-                            <TextBlock Text="Daily Singer" Foreground="White" FontSize="26" FontWeight="Bold"/>
-                            <TextBlock Text="Taylor Swift" Foreground="#c0e6de" FontSize="18" FontWeight="SemiBold"/>
-                        </StackPanel>
-                        
-                    </Grid>
-                </Border>
-                
-            </StackPanel>
+            <!--界面切换-->
+            <ContentControl Grid.Column="1" Content="{Binding CurrentView}" Background="White" Margin="40 60 10 0"/>
         </Grid>
     </Border>
 </Window>
