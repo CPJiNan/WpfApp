@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using WpfApp1.Views;
+using VitaServerLauncher.Views;
 
-namespace WpfApp1.ViewModels
+namespace VitaServerLauncher.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {

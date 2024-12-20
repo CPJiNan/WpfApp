@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace WpfApp1.Views
+namespace VitaServerLauncher.Views
 {
     public partial class HomeView : UserControl
     {

@@ -1,8 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using WpfApp1.ViewModels;
+using VitaServerLauncher.ViewModels;
 
-namespace WpfApp1
+namespace VitaServerLauncher
 {
     public partial class MainWindow : Window
     {
