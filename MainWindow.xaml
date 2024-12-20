@@ -10,12 +10,10 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="220"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
             
             <!--菜单-->
@@ -72,20 +70,19 @@
 
                     <TextBlock Text="不知道写什么" Style="{StaticResource menuTitle}"/>
 
-                    <Button x:Name="Home" Style="{StaticResource menuButton}" 
-                            Background="#02be68" Foreground="White"
+                    <Button x:Name="Home" Style="{StaticResource menuButton_Active}" 
                             Click="ShowHome_Click">
                         <Grid>
                             <TextBlock Text="第一页" Margin="0 0 0 2"/>
-                            <Icon:PackIconMaterial x:Name="Home_Arrow_Icon" Style="{StaticResource menuButtonIcon}" Visibility="Visible"/>
+                            <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"/>
                         </Grid>
                     </Button>
 
-                    <Button x:Name="Console" Style="{StaticResource menuButton}"
+                    <Button x:Name="Console" Style="{StaticResource menuButton_Normal}"
                             Click="ShowConsole_Click">
                         <Grid>
                             <TextBlock Text="第二页" Margin="0 0 0 2"/>
-                            <Icon:PackIconMaterial x:Name="Console_Arrow_Icon" Style="{StaticResource menuButtonIcon}"/>
+                            <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"/>
                         </Grid>
                     </Button>
 
