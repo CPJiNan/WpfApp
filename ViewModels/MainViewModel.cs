@@ -17,6 +17,17 @@ namespace VitaServerLauncher.ViewModels
             }
         }
 
+        private string _currentButton;
+        public string CurrentButton
+        {
+            get => _currentButton;
+            set
+            {
+                _currentButton = value;
+                OnPropertyChanged();
+            }
+        }
+
         public MainViewModel()
         {
             CurrentView = new HomeView();

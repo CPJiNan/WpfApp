@@ -1,5 +1,8 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
+using MahApps.Metro.IconPacks;
 using VitaServerLauncher.ViewModels;
 
 namespace VitaServerLauncher
@@ -13,14 +16,15 @@ namespace VitaServerLauncher
             InitializeComponent();
 
             ViewModel = new MainViewModel();
-            this.DataContext = ViewModel;
+            DataContext = ViewModel;
+            ViewModel.CurrentButton = "Home";
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
             {
-                this.DragMove();
+                DragMove();
             }
         }
 
@@ -48,11 +52,39 @@ namespace VitaServerLauncher
 
         private void ShowHome_Click(object sender, RoutedEventArgs e)
         {
+            Button oldButton = (Button) FindName(ViewModel.CurrentButton);
+            oldButton.Background = new SolidColorBrush(Colors.Transparent);
+            oldButton.Foreground = new SolidColorBrush(Colors.Black);
+            PackIconMaterial oldArrowIcon = (PackIconMaterial)FindName(ViewModel.CurrentButton + "_Arrow_Icon");
+            oldArrowIcon.Visibility = Visibility.Hidden;
+
+            Button newButton = sender as Button;
+            ViewModel.CurrentButton = newButton.Name;
+
+            newButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#02be68"));
+            newButton.Foreground = new SolidColorBrush(Colors.White);
+            PackIconMaterial newArrowIcon = (PackIconMaterial) FindName(ViewModel.CurrentButton + "_Arrow_Icon");
+            newArrowIcon.Visibility = Visibility.Visible;
+
             ViewModel.ShowHome();
         }
 
         private void ShowConsole_Click(object sender, RoutedEventArgs e)
         {
+            Button oldButton = (Button)FindName(ViewModel.CurrentButton);
+            oldButton.Background = new SolidColorBrush(Colors.Transparent);
+            oldButton.Foreground = new SolidColorBrush(Colors.Black);
+            PackIconMaterial oldArrowIcon = (PackIconMaterial)FindName(ViewModel.CurrentButton + "_Arrow_Icon");
+            oldArrowIcon.Visibility = Visibility.Hidden;
+
+            Button newButton = sender as Button;
+            ViewModel.CurrentButton = newButton.Name;
+
+            newButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#02be68"));
+            newButton.Foreground = new SolidColorBrush(Colors.White);
+            PackIconMaterial newArrowIcon = (PackIconMaterial)FindName(ViewModel.CurrentButton + "_Arrow_Icon");
+            newArrowIcon.Visibility = Visibility.Visible;
+
             ViewModel.ShowConsole();
         }
     }

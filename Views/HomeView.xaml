@@ -1,8 +1,9 @@
 ﻿<UserControl x:Class="VitaServerLauncher.Views.HomeView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <StackPanel Grid.Column="1" Background="White" Margin="40 60 10 0">
-        <TextBlock Text="主页" Style="{StaticResource titleText}"/>
+    <StackPanel>
+        
+        <TextBlock Text="第一页" Style="{StaticResource titleText}"/>
 
         <Border CornerRadius="20" Margin="0 20 0 0">
             <Border.Background>
@@ -17,18 +18,10 @@
             </Border.Effect>
 
             <Grid>
-                <Border Opacity="0.07" CornerRadius="20">
-                    <Border.Background>
-                        <SolidColorBrush Color="White"/>
-                    </Border.Background>
-                </Border>
-
-                <!--Music List-->
                 <StackPanel Margin="30">
-                    <TextBlock Text="Daily Singer" Foreground="White" FontSize="26" FontWeight="Bold"/>
-                    <TextBlock Text="Taylor Swift" Foreground="#c0e6de" FontSize="18" FontWeight="SemiBold"/>
+                    <TextBlock Text="标题" Foreground="White" FontSize="26" FontWeight="Bold"/>
+                    <TextBlock Text="这里是示例文字" Foreground="#c0e6de" FontSize="18" FontWeight="SemiBold"/>
                 </StackPanel>
-
             </Grid>
         </Border>
 
