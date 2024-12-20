@@ -101,13 +101,21 @@
                     </Border.Background>
 
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="20" ShadowDepth="0" Opacity="0.4" Color="1fae7e"/>
+                        <DropShadowEffect BlurRadius="20" ShadowDepth="0" Opacity="0.4" Color="#1fae7e"/>
                     </Border.Effect>
 
                     <Grid>
                         <Border Opacity="0.07" CornerRadius="20">
-
+                            <Border.Background>
+                                <SolidColorBrush Color="White"/>
+                            </Border.Background>
                         </Border>
+                        
+                        <!--Music List-->
+                        <StackPanel Margin="30">
+                            <TextBlock Text="Daily Singer" Foreground="White" FontSize="26" FontWeight="Bold"/>
+                        </StackPanel>
+                        
                     </Grid>
                 </Border>
                 
