@@ -114,6 +114,7 @@
                         <!--Music List-->
                         <StackPanel Margin="30">
                             <TextBlock Text="Daily Singer" Foreground="White" FontSize="26" FontWeight="Bold"/>
+                            <TextBlock Text="Taylor Swift" Foreground="#c0e6de" FontSize="18" FontWeight="SemiBold"/>
                         </StackPanel>
                         
                     </Grid>
